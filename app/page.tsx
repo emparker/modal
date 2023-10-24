@@ -5,11 +5,12 @@ import ClickableImage from './components/ClickableImage';
 import TheModal from './components/TheModal'
 import BottomNav from "./components/BottomNav";
 
+
 export default function Home () {
   const [modalFlip, setModalFlip] = React.useState(true) 
-  
+
   const handleClick = () => {
-    console.log('Image clicked');
+    console.log('Image clicked')
     setModalFlip(!modalFlip)
   };
 
