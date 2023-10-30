@@ -1,63 +1,36 @@
 'use client'
 
 import React from "react"
+import Card from "./Card"
 
 const TheModal: React.FC<{ modalFlip: boolean, onClick: () => void }> = ({ onClick }) => {
     // const [ card, setCard ] = React.useState(0)
     // const [ openCard, setOpenCard ] = React.useState(false)
+    
 
-   const cards : {
+   const card : {
         title : string;
+        subTitle: string;
         text : string;
-        icon : string;
-        [key: string]: any;
-    }[] = [
+        image : string;
+    } = 
         {
-            title: 'card_1',
-            text: 'this is fun',
-            icon: 'fa-regular fa-1',
-            key: 1
-        },
-        {
-            title: 'card_2',
-            text: 'are we having fun?',
-            icon: "fa-regular fa-2",
-            key: 2
-        },
-        {
-            title: 'card_3',
-            text: 'lets gooooo',
-            icon: "fa-regular fa-3",
-            key: 3
-        },
-        {
-            title: 'card_4',
-            text: 'ok silly me',
-            icon: "fa-regular fa-4",
-            key: 4
+            title: 'Your Title',
+            subTitle: 'Sub Title Goes Here',
+            text: '404: Sense of Humor Not Found',
+            image: 'topo-unsplash.jpg'
         }
-    ]
+       
+  
 
-//    const cardComponent.map(card => {
-//         <div key={card.key}>
-//             <h1>{card.title}</h1>
-//             <p>{card.text}</p>
-//             <i className={card.icon}></i> 
-//         </div>
-//        })
+console.log(card)
 
     return (
-        <div onClick={onClick} className="">
-            <div className="bg-slate-50 w-[800px] h-[600px] ">
-            <div className="flex items-center justify-center">
-                {/* {card} */}
-                        <h1>{cards[0].title}</h1>
-                        <p>{cards[0].text}</p>
-                        <i className="{cards[0].icon}"></i> 
-                    </div>
-                    
-            </div>
+        <div onClick={onClick} className="flex flex-col items-center bg-slate-50 w-[800px] h-auto p-20 ">
+                {/* { cards.map(card => <Card key={card.key} title={card.title} text={card.text} />)} */}
+            <Card title={card.title} subTitle={card.subTitle} text={card.text} image={card.image} />
         </div>
+                    
     )
 }
 
